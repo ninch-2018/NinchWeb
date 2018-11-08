@@ -1,7 +1,36 @@
-<HTML LANG="JA">
-    <body>
-        {% if result %}
-            {{result}}
-        {% endif %}
-     </body>
-</HTML>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>撮影＆アップロード</title>
+</head>
+
+<body>
+    {% if result %}
+    {{result}}
+    {% endif %}
+</body>
+
+<body>
+
+    <div align="center">
+        <button onclick="startVideo()">ビデオ開始</button>
+        <button onclick="stopVideo()">ビデオ終了</button>
+        <button onclick="snapshot()">撮影</button>
+        <h2>これがあなたの顔です</h2>
+        <video autoplay width="320" height="240"></video>
+    </div>
+
+    <div align="center">
+        <h2>撮影したやつ</h2>
+        <!-- ここいじったら画像の大きさを変えられる(width, height) -->
+        <canvas id="myCanvas" width="320" height="240"></canvas><br>
+        <button onclick="saveCanvas('png');">pngで保存</button>
+        <button onclick="saveCanvas('jpeg');">jpegで保存</button>
+    </div>
+
+    <script src="/static/camera.js"></script>
+</body>
+
+</html>
